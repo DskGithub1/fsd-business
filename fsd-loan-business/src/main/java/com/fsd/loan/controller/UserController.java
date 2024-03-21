@@ -10,10 +10,11 @@ import com.fsd.loan.repository.UserRepository;
 
 @RestController
 public class UserController {
+	
     @Autowired
     private UserRepository userRepository;
 
-    @PostMapping("/login")
+    @PostMapping("/application")
     public String login(@RequestBody UserLoginRequest request) {
         User user = userRepository.findByMobileNumberAndDateOfBirth(request.getMobileNumber(), request.getDateOfBirth());
         if (user != null) {

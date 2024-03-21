@@ -1,15 +1,11 @@
 package com.fsd.loan.repository;
-import java.util.ArrayList;
-import java.util.List;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-import com.fsd.loan.bean.PersonalInfo;
+import com.fsd.loan.model.PersonalInfoModel;
 
-public class PersonalInfoRepository {
-    private List<PersonalInfo> personalInfos = new ArrayList<>();
-
-    public void save(PersonalInfo personalInfo) {
-        personalInfos.add(personalInfo);
-    }
-
-    // Additional methods for data retrieval can be implemented here
+@Repository
+public interface PersonalInfoRepository extends JpaRepository<PersonalInfoModel, Long> {
+    // Additional methods for specific queries can be defined here
+	PersonalInfoModel findByApplicationKey(Long applicationKey);
 }

@@ -5,20 +5,19 @@ import jakarta.persistence.Id;
 @Entity
 public class User {
     @Id
-    private String applicationKey;
+    private Long applicationKey;
     private String mobileNumber;
     private String dateOfBirth;
 
-    // Getters and setters
-    public String getApplicationKey() {
-        return applicationKey;
-    }
+    public Long getApplicationKey() {
+		return applicationKey;
+	}
 
-    public void setApplicationKey(String applicationKey) {
-        this.applicationKey = applicationKey;
-    }
+	public void setApplicationKey(Long applicationKey) {
+		this.applicationKey = applicationKey;
+	}
 
-    public String getMobileNumber() {
+	public String getMobileNumber() {
         return mobileNumber;
     }
 
