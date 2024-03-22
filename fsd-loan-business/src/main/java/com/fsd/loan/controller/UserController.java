@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.fsd.loan.bean.UserLoginRequest;
-import com.fsd.loan.model.User;
+import com.fsd.loan.model.Users;
 import com.fsd.loan.repository.UserRepository;
 
 @RestController
@@ -16,7 +16,7 @@ public class UserController {
 
     @PostMapping("/application")
     public String login(@RequestBody UserLoginRequest request) {
-        User user = userRepository.findByMobileNumberAndDateOfBirth(request.getMobileNumber(), request.getDateOfBirth());
+        Users user = userRepository.findByMobileNumberAndDateOfBirth(request.getMobileNumber(), request.getDateOfBirth());
         if (user != null) {
             return "Login successful";
         } else {
