@@ -1,26 +1,21 @@
 package com.fsd.loan.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
-@Entity(name = "loanoffer")
+@Entity
 public class LoanOffer {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
-	@Column(name="applicationkey")
 	private Long applicationKey;
-	@Column(name="bankname")
 	private String bankName;
-	@Column(name="interestrate")
-	private Double interestRate;
-	@Column(name="termmonths")
-	private Integer termMonths;
+	private double interestRate;
+	private int termMonths;
 
 	public Long getId() {
 		return id;
@@ -62,12 +57,6 @@ public class LoanOffer {
 		this.termMonths = termMonths;
 	}
 
-	public LoanOffer() {
-		super();
-	
-	}
-
-	
 	// Constructors, getters, and setters
 
 }

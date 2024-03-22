@@ -5,26 +5,16 @@ public class PersonalInfoRequest {
     private String pan;
     private double salary;
     private String address;
-    private Long applicationKey;
 
-    public Long getapplicationKey() {
-		return applicationKey;
-	}
-
-	public void setapplicationKey(Long appkey) {
-		this.applicationKey = appkey;
-	}
-
-	public PersonalInfoRequest() {
+    public PersonalInfoRequest() {
     }
 
-    public PersonalInfoRequest(String fullName, String email, String pan, double salary, String address,Long appkey) {
+    public PersonalInfoRequest(String fullName, String email, String pan, double salary, String address) {
         this.fullName = fullName;
         this.email = email;
         this.pan = pan;
         this.salary = salary;
         this.address = address;
-        this.applicationKey=appkey;
     }
 
 	public String getFullName() {

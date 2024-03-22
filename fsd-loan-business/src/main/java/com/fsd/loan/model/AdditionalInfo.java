@@ -1,27 +1,26 @@
 package com.fsd.loan.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
-@Entity(name = "additionalinfo")
+@Entity
 public class AdditionalInfo {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
-	@Column(name="applicationkey")
 	private Long applicationKey;
 
-	@Column(name="nomineename")
 	private String nomineeName;
-	@Column(name="nomineerelation")
 	private String nomineeRelation;
-	@Column(name="officeaddress")
 	private String officeAddress;
+
+	public AdditionalInfo(Long applicationKey2, String nomineeName2, String nomineeRelation2, String officeAddress2) {
+		// TODO Auto-generated constructor stub
+	}
 
 	public Long getId() {
 		return id;

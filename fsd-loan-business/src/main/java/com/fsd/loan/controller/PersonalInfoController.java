@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.fsd.loan.bean.PersonalInfo;
 import com.fsd.loan.bean.PersonalInfoRequest;
-import com.fsd.loan.model.PersonalInfoModel;
 import com.fsd.loan.service.PersonalInfoService;
 
 @RestController
@@ -26,14 +25,14 @@ public class PersonalInfoController {
     }
 
     @PostMapping("/personal-info")
-    public ResponseEntity<PersonalInfoModel> createPersonalInfo(@Valid @RequestBody PersonalInfoRequest request) {
-    	PersonalInfoModel createdPersonalInfo = personalInfoService.createPersonalInfo(request);
+    public ResponseEntity<PersonalInfo> createPersonalInfo(@Valid @RequestBody PersonalInfoRequest request) {
+        PersonalInfo createdPersonalInfo = personalInfoService.createPersonalInfo(request);
         return ResponseEntity.status(HttpStatus.CREATED).body(createdPersonalInfo);
     }
     
-    @GetMapping("/personal-info/{id}")
-    public ResponseEntity<PersonalInfoModel> getPersonalInfo(@PathVariable Long id) {
-    	PersonalInfoModel personalInfo = personalInfoService.getPersonalInfo(id);
+    @GetMapping("/personal-info")
+    public ResponseEntity<PersonalInfo> getPersonalInfo(@PathVariable Long id) {
+    	PersonalInfo personalInfo = personalInfoService.getPersonalInfo(id);
         if (personalInfo != null) {
             return ResponseEntity.ok(personalInfo);
         } else {

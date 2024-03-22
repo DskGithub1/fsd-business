@@ -17,18 +17,16 @@ public class PersonalInfoService {
         this.personalInfoRepository = personalInfoRepository;
     }
 
-    public PersonalInfoModel createPersonalInfo(PersonalInfoRequest request) {
+    public PersonalInfo createPersonalInfo(PersonalInfoRequest request) {
         PersonalInfoModel personalInfo = new PersonalInfoModel(request.getFullName(), request.getEmail(),
                                                      request.getPan(), request.getSalary(),
-                                                     request.getAddress(),request.getapplicationKey());
-        
-     
-         return personalInfoRepository.save(personalInfo);
-         
+                                                     request.getAddress());
+         personalInfoRepository.save(personalInfo);
+         return null;
     }
     
-    public PersonalInfoModel getPersonalInfo(Long applicationKey) {
-     return personalInfoRepository.findByApplicationKey(applicationKey);
-     
+    public PersonalInfo getPersonalInfo(Long applicationKey) {
+      personalInfoRepository.findByApplicationKey(applicationKey);
+      return null;
     }
 }

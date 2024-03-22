@@ -8,5 +8,5 @@ import com.fsd.loan.model.AdditionalInfo;
 
 @Repository
 public interface AdditionalInfoRepository extends JpaRepository<AdditionalInfo, Long> {
-    AdditionalInfo findByApplicationKey(Long applicationKey);
+    List<AdditionalInfo> findByApplicationKey(Long applicationKey);
 }
