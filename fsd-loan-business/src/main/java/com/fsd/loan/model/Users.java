@@ -1,12 +1,19 @@
 package com.fsd.loan.model;
+
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 @Entity
-public class User {
+public class Users {
     @Id
+    @Column(name="applicationkey")
     private Long applicationKey;
+    @Column(name="mobilenumber")
     private String mobileNumber;
+    @Column(name="dateofbirth")
     private String dateOfBirth;
 
     public Long getApplicationKey() {

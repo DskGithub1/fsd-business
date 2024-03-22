@@ -19,16 +19,16 @@ import com.fsd.loan.service.AdditionalInfoService;
 @RestController
 public class AdditionalInfoController {
 
-    private final AdditionalInfoService additionalInfoService;
-
-    @Autowired
+    private  AdditionalInfoService additionalInfoService;
+    
+	@Autowired
     public AdditionalInfoController(AdditionalInfoService additionalInfoService) {
         this.additionalInfoService = additionalInfoService;
     }
 
     @GetMapping("/api/businessservice/additional-info")
-    public ResponseEntity<List<AdditionalInfo>> getAdditionalInfo(@RequestParam Long applicationKey) {
-        List<AdditionalInfo> additionalInfoList = additionalInfoService.getAdditionalInfo(applicationKey);
+    public ResponseEntity<AdditionalInfo> getAdditionalInfo(@RequestParam Long applicationKey) {
+        AdditionalInfo additionalInfoList = additionalInfoService.getAdditionalInfo(applicationKey);
         return ResponseEntity.ok(additionalInfoList);
     }
 

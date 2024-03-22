@@ -1,4 +1,5 @@
 package com.fsd.loan.service;
+
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,20 +12,25 @@ import com.fsd.loan.repository.AdditionalInfoRepository;
 @Service
 public class AdditionalInfoService {
 
-    private final AdditionalInfoRepository additionalInfoRepository;
+	private AdditionalInfoRepository additionalInfoRepository;
+	
 
-    @Autowired
-    public AdditionalInfoService(AdditionalInfoRepository additionalInfoRepository) {
-        this.additionalInfoRepository = additionalInfoRepository;
-    }
+	@Autowired
+	public AdditionalInfoService(AdditionalInfoRepository additionalInfoRepository) {
+		this.additionalInfoRepository = additionalInfoRepository;
+	}
 
-    public List<AdditionalInfo> getAdditionalInfo(Long applicationKey) {
-        return additionalInfoRepository.findByApplicationKey(applicationKey);
-    }
+	public AdditionalInfo getAdditionalInfo(Long applicationKey) {
+		return additionalInfoRepository.findByApplicationKey(applicationKey);
+	}
 
-    public AdditionalInfo createAdditionalInfo(AdditionalInfoRequest request) {
-        AdditionalInfo additionalInfo = new AdditionalInfo(request.getApplicationKey(),
-                request.getNomineeName(), request.getNomineeRelation(), request.getOfficeAddress());
-        return additionalInfoRepository.save(additionalInfo);
-    }
+	public AdditionalInfo createAdditionalInfo(AdditionalInfoRequest request) {
+		AdditionalInfo additionalInfo=new AdditionalInfo();
+		additionalInfo.setApplicationKey(request.getApplicationKey());
+		additionalInfo.setNomineeName(request.getNomineeName());
+		additionalInfo.setNomineeRelation(request.getNomineeRelation());
+		additionalInfo.setOfficeAddress(request.getOfficeAddress());
+		
+		return additionalInfoRepository.save(additionalInfo);
+	}
 }

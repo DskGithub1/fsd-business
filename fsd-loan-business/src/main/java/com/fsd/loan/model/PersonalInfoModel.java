@@ -1,32 +1,42 @@
 package com.fsd.loan.model;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 
-@Entity
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+@Entity(name="personalinfomodel")
 public class PersonalInfoModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
+    
+    @Column(name="fullname")
     private String fullName;
+    @Column(name="email")
     private String email;
+    @Column(name="pan")
     private String pan;
+    @Column(name="salary")
     private double salary;
+    @Column(name="address")
     private String address;
+    @Column(name="applicationkey")
     private Long applicationKey;
 
     public PersonalInfoModel() {
     }
 
-    public PersonalInfoModel(String fullName, String email, String pan, double salary, String address) {
+    public PersonalInfoModel(String fullName, String email, String pan, double salary, String address,Long applicationKey) {
         this.fullName = fullName;
         this.email = email;
         this.pan = pan;
         this.salary = salary;
         this.address = address;
+        this.applicationKey=applicationKey;
     }
 
 	public Long getId() {
