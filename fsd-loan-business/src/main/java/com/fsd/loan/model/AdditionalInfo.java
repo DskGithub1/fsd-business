@@ -69,6 +69,4 @@ public class AdditionalInfo {
 				+ ", nomineeRelation=" + nomineeRelation + ", officeAddress=" + officeAddress + "]";
 	}
 
-	// Constructors, getters, and setters
-
 }

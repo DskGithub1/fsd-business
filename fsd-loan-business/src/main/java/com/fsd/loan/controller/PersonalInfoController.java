@@ -4,6 +4,7 @@ import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -26,18 +27,16 @@ public class PersonalInfoController {
     }
 
     @PostMapping("/personal-info")
+    @CrossOrigin
     public ResponseEntity<PersonalInfoModel> createPersonalInfo(@Valid @RequestBody PersonalInfoRequest request) {
     	PersonalInfoModel createdPersonalInfo = personalInfoService.createPersonalInfo(request);
         return ResponseEntity.status(HttpStatus.CREATED).body(createdPersonalInfo);
     }
     
     @GetMapping("/personal-info/{id}")
+    @CrossOrigin
     public ResponseEntity<PersonalInfoModel> getPersonalInfo(@PathVariable Long id) {
     	PersonalInfoModel personalInfo = personalInfoService.getPersonalInfo(id);
-        if (personalInfo != null) {
             return ResponseEntity.ok(personalInfo);
-        } else {
-            return ResponseEntity.notFound().build();
-        }
     }
 }
