@@ -22,10 +22,7 @@ public class LoanOfferService {
 	}
 
 	public List<LoanOffer> getLoanOffers(Long applicationKey) {
-		if (applicationKey % 2 == 0) {
-			return loanOfferRepository.findByApplicationKey(1l);
-		} else {
-			return loanOfferRepository.findByApplicationKey(2l);
-		}
+		return loanOfferRepository.findAll();
+
 	}
 }

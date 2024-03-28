@@ -21,6 +21,33 @@ public class LoanOffer {
 	private Double interestRate;
 	@Column(name="termmonths")
 	private Integer termMonths;
+	
+	private String bgcolor;
+	private String imageurl;
+
+	public String getBgcolor() {
+		return bgcolor;
+	}
+
+	public void setBgcolor(String bgcolor) {
+		this.bgcolor = bgcolor;
+	}
+
+	public String getImageurl() {
+		return imageurl;
+	}
+
+	public void setImageurl(String imageurl) {
+		this.imageurl = imageurl;
+	}
+
+	public void setInterestRate(Double interestRate) {
+		this.interestRate = interestRate;
+	}
+
+	public void setTermMonths(Integer termMonths) {
+		this.termMonths = termMonths;
+	}
 
 	public Long getId() {
 		return id;
@@ -66,8 +93,5 @@ public class LoanOffer {
 		super();
 	
 	}
-
-	
-	// Constructors, getters, and setters
 
 }
