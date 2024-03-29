@@ -26,7 +26,7 @@ public class UserController {
 				Users users = new Users();
 				users.setDateOfBirth(request.getDateOfBirth());
 				users.setMobileNumber(request.getMobileNumber());
-				userRepository.save(users);
+				//userRepository.save(users);
 				return userRepository.save(users);
 			}
 		} catch (Exception e) {

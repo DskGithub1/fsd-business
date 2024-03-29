@@ -8,9 +8,9 @@
 		<version>3.2.2</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.example</groupId>
+	<groupId>fsd-loan-business</groupId>
 	<artifactId>fsd-loan-business</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0</version>
 	<name>fsd-loan-business</name>
 	<description>Fsd loan business service</description>
 	<properties>
