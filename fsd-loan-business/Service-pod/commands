@@ -13,20 +13,12 @@ kubectl apply -f fsd-business-deployment.yaml
 
 kubectl apply -f fsd-business-service.yaml
 
+minikube service fsd-business --url
 
 Reference :
-docker build -t fsd-business/fsd-business:latest .
-
-docker push your-repo-name/image-name:tag
-
-docker push fsd-business/fsd-business:latest
-
-docker tag fsd-business mysticgeek11/fsd-business
-
-docker push mysticgeek11/fsd-business
+kubectl cluster-info
 
 kubectl delete deployment fsd-business
-
 
 sudo passwd ubuntu
 Dsk@1234

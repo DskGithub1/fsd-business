@@ -5,7 +5,7 @@ FROM amazoncorretto:17-alpine-jdk
 WORKDIR /app
 
 # Copy the Spring Boot application JAR file into the container
-COPY fsd-loan-business-1.0.0.jar /app/app.jar
+COPY fsd-loan-business-1.0.1.jar /app/app.jar
 
 # Specify the command to run the Spring Boot application
 CMD ["java", "-jar", "app.jar"]
