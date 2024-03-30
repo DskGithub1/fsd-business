@@ -19,11 +19,3 @@ Reference :
 kubectl cluster-info
 
 kubectl delete deployment fsd-business
-
-sudo passwd ubuntu
-Dsk@1234
-
-scp -i /Users/dnyaneshwarkomatwar/AWS/aws-ec2-my-key.pem -r /Users/dnyaneshwarkomatwar/fsd-business/Jar ec2-user@13.235.13.66:/home/ec2-user/
-
-rsync -av -e "ssh -i /Users/dnyaneshwarkomatwar/AWS/aws-ec2-my-key.pem" /Users/dnyaneshwarkomatwar/fsd-business/Jar ec2-user@13.235.13.66:/home/ec2-user/
-
