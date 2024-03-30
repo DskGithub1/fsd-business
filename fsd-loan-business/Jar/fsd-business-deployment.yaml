@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fsd-business
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: fsd-business
+  template:
+    metadata:
+      labels:
+        app: fsd-business
+    spec:
+      containers:
+      - name: fsd-business
+        image: mysticgeek11/fsd-business:latest
+        ports:
+        - containerPort: 8080
