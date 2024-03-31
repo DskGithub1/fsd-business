@@ -21,7 +21,17 @@ public class LoanOffer {
 	private Double interestRate;
 	@Column(name="termmonths")
 	private Integer termMonths;
+	@Column(name="eligibleamount")
+	private Long eligibleAmount;
 	
+	public Long getEligibleAmount() {
+		return eligibleAmount;
+	}
+
+	public void setEligibleAmount(Long eligibleamount) {
+		this.eligibleAmount = eligibleamount;
+	}
+
 	private String bgcolor;
 	private String imageurl;
 
